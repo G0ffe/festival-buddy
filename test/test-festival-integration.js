@@ -67,7 +67,7 @@ describe('Festival API resource', function () {
                     return Festival.count();
                 })
                 .then(function (count) {
-                    res.body.festivals.should.have.length.of(count);
+                    res.body.festivals.should.have.lengthOf(count);
                 });
         });
 
@@ -114,7 +114,9 @@ describe('Festival API resource', function () {
                     res.body.should.include.keys('id', 'name', 'date', 'location');
                     res.body.id.should.not.be.null;
                     res.body.name.should.equal(newFestival.name);
-                    res.body.date.should.equal(newFestival.date);
+                    console.log(new Date(newFestival.date));
+                    console.log(new Date(res.body.date));
+                    JSON.stringify(new Date(res.body.date)).should.equal(JSON.stringify(new Date(newFestival.date)));
                     res.body.location.should.equal(newFestival.location);
 
                     return Festival.findById(res.body.id);
