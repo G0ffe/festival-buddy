@@ -86,11 +86,10 @@ function sendToApi(state) {
 }
 
 function updateApi(state) {
-    //console.log(state);
     $.ajax({
         type: PUT,
         url: url,
-        data: JSON.stringify({ "name": $('#name').val(), "date": $('#date').val(), "location": $('#location').val() })
+        data: state
     })
         .done(function (data) {
             console.log('POST response:', JSON.stringify(data, "", 2));
@@ -160,13 +159,10 @@ $('#add').click(function (e) {
     $('#location').val("");
 });
 
-$('#update').click(function (e) {
+$('#updateNameButton').click(function (e) {
     e.preventDefault();
-    console.log(state);
-    updateApi(state);
-    $('#name').val("");
-    $('#date').val("");
-    $('#location').val("");
+    const name = $('#updateName').val();
+    updateApi(name);
 });
 
 $('#apicheck').click(function (e) {
