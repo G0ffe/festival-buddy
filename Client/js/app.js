@@ -53,10 +53,10 @@ function sendToApi(state) {
 }
 
 function updateApi(state) {
-    console.log($(this).id);
+    //console.log(state);
     $.ajax({
         type: PUT,
-        url: url + $(this).id,
+        url: url,
         data: JSON.stringify({ "name": $('#name').val(), "date": $('#date').val(), "location": $('#location').val() })
     })
         .done(function (data) {
@@ -74,14 +74,15 @@ function renderFestivalList(state) {
     else {
         $('.listFestivals').empty();
         for (let i = 0; i < state.festivals.length; i++) {
-            $('.listFestivals').append(`<h2>${state.festivals[i].name}</h2>`);
+            $('.listFestivals').append(`<ul>`);
+            $('.listFestivals').append(`<li value="${state.festivals[i].id}">${state.festivals[i].name}<button class="nameEdit">Edit</button></li>`);
             let fullDate = (new Date(state.festivals[i].date));
             date = fullDate.toString().slice(0, 16);
             time = fullDate.toString().slice(17);
-            $('.listFestivals').append(`<p>Date: ${date}</p>`);
-            $('.listFestivals').append(`<p>Time: ${time}</p>`);
-            $('.listFestivals').append(`<p>Location: ${state.festivals[i].location}</p>`);
-            $('.listFestivals').append(`<button class="edit" id="${state.festivals[i].id}">Edit</button>`)
+            $('.listFestivals').append(`<li value="${state.festivals[i].id}">Date: ${date}<button class="dateEdit">Edit</button></li>`);
+            $('.listFestivals').append(`<li>Time: ${time}</li>`);
+            $('.listFestivals').append(`<li value="${state.festivals[i].id}">Location: ${state.festivals[i].location}<button class="locationEdit">Edit</button></li>`);        
+            $('.listFestivals').append(`</ul>`);
         }
     }
 
@@ -94,10 +95,25 @@ function renderEdit(state) {
     $('#updateLocation').val(state.location);
 }
 
-$(document).on('click', '.edit', function (e) {
+$(document).on('click', '.nameEdit', function (e) {
     e.preventDefault();
-    const id = $(this).attr('id');
-    getApiById(id);
+    const id = $(this).parents().attr("value");
+    console.log(id);
+    //getApiById(id);
+});
+
+$(document).on('click', '.dateEdit', function (e) {
+    e.preventDefault();
+    const id = $(this).parents().attr("value");
+    console.log(id);
+    //getApiById(id);
+});
+
+$(document).on('click', '.locationEdit', function (e) {
+    e.preventDefault();
+    const id = $(this).parents().attr("value");
+    console.log(id);
+    //getApiById(id);
 });
 
 $('#add').click(function (e) {
@@ -108,7 +124,14 @@ $('#add').click(function (e) {
     $('#location').val("");
 });
 
-
+$('#update').click(function (e) {
+    e.preventDefault();
+    console.log(state);
+    updateApi(state);
+    $('#name').val("");
+    $('#date').val("");
+    $('#location').val("");
+});
 
 $('#apicheck').click(function (e) {
     e.preventDefault();
