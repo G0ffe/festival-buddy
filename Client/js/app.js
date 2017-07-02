@@ -30,7 +30,7 @@ function getApiById(state) {
         .done(function (data) {
             state.festival = data;
             console.log('GET response:', JSON.stringify(data, "", 2));
-        })
+            renderEdit(data);        })
         .fail(function (jqXHR, textStatus, err) {
             console.log('AJAX error response:', textStatus);
         });
@@ -87,12 +87,17 @@ function renderFestivalList(state) {
 
 }
 
+function renderEdit(state) {
+    $('#updateName').val(state.name);
+    let date = state.date.toString().slice(0, 10)
+    $('#updateDate').val(date);
+    $('#updateLocation').val(state.location);
+}
+
 $(document).on('click', '.edit', function (e) {
     e.preventDefault();
-    console.log($(this).attr('id'));
     const id = $(this).attr('id');
     getApiById(id);
-    
 });
 
 $('#add').click(function (e) {
