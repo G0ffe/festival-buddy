@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const festivalSchema = mongoose.Schema({
     name: { type: String, require: true },
-    date: { type: String, require: true },
+    date: { type: Date, require: true },
     location: { type: String, require: true }
 });
 

@@ -9,6 +9,7 @@ const {Festival} = require('./models');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static('../Client'))
 
 
 app.get('/festivals', (req, res) => {

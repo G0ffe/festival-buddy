@@ -4,6 +4,7 @@ const faker = require('faker');
 const mongoose = require('mongoose');
 
 const should = chai.should();
+const expect = chai.expect;
 
 const { Festival } = require('../models');
 const { app, runServer, closeServer } = require('../server');
@@ -92,7 +93,7 @@ describe('Festival API resource', function () {
                 .then(function (festival) {
                     resFestival.id.should.equal(festival.id);
                     resFestival.name.should.equal(festival.name);
-                    resFestival.date.should.equal(festival.date);
+                    JSON.stringify(resFestival.date).should.equal(JSON.stringify(festival.date));
                     resFestival.location.should.equal(festival.location);
                 });
         });
@@ -114,16 +115,15 @@ describe('Festival API resource', function () {
                     res.body.should.include.keys('id', 'name', 'date', 'location');
                     res.body.id.should.not.be.null;
                     res.body.name.should.equal(newFestival.name);
-                    console.log(new Date(newFestival.date));
-                    console.log(new Date(res.body.date));
-                    JSON.stringify(new Date(res.body.date)).should.equal(JSON.stringify(new Date(newFestival.date)));
+
+                    JSON.stringify(res.body.date).should.equal(JSON.stringify(newFestival.date));
                     res.body.location.should.equal(newFestival.location);
 
                     return Festival.findById(res.body.id);
                 })
                 .then(function (festival) {
                     festival.name.should.equal(newFestival.name);
-                    festival.date.should.equal(newFestival.date);
+                    JSON.stringify(festival.date).should.equal(JSON.stringify(newFestival.date));
                     festival.location.should.equal(newFestival.location);
                 });
         });

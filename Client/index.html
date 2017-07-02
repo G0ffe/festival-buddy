@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Festival Buddy</title>
+    <meta charset="UTF-8">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Festival Buddy</h1>
+    <main>
+        <div class="listFestivals">
+            <button type="submit" id="apicheck">PRESS ME!</button>
+        </div> 
+
+        <div class="addNew">
+            <form id="addFestival">
+                <label>Name:</label><br>
+                <input type="text" name="name" id="name" placeholder="Name" required="required"><br> 
+                <label>Date:</label><br>
+                <input type="date" name="date" id="date" required="required"><br>
+                <label>Location:</label><br>
+                <input type="text" name="location" id="location" placeholder="Location" required="required"><br>
+                <input type="submit" name="add" id="add" value="Add"><br>
+            </form>
+        </div>
+
+        <div>
+            <form id="edit">
+                <label>Name:</label><br>
+                <input type="text" name="name" id="updateName" placeholder="Name"><br> 
+                <label>Date:</label><br>
+                <input type="date" name="date" id="updateDate"><br>
+                <label>Location:</label><br>
+                <input type="text" name="location" id="updateLocation" placeholder="Location"><br>
+                <input type="submit" name="update" id="update" value="Update"><br>
+            </form>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
