@@ -21,6 +21,21 @@ function getApi(state) {
         });
 }
 
+function getApiById(state) {
+    $.ajax({
+        type: 'GET',
+        url: url + "/" + state,
+        dataType: 'json'
+    })
+        .done(function (data) {
+            state.festival = data;
+            console.log('GET response:', JSON.stringify(data, "", 2));
+        })
+        .fail(function (jqXHR, textStatus, err) {
+            console.log('AJAX error response:', textStatus);
+        });
+}
+
 function sendToApi(state) {
     $.ajax({
         type: "POST",
@@ -75,6 +90,9 @@ function renderFestivalList(state) {
 $(document).on('click', '.edit', function (e) {
     e.preventDefault();
     console.log($(this).attr('id'));
+    const id = $(this).attr('id');
+    getApiById(id);
+    
 });
 
 $('#add').click(function (e) {
