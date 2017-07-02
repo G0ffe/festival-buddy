@@ -21,7 +21,7 @@ function getApi(state) {
         });
 }
 
-function getApiById(state) {
+function getApiById_Name(state) {
     $.ajax({
         type: 'GET',
         url: url + "/" + state,
@@ -30,7 +30,40 @@ function getApiById(state) {
         .done(function (data) {
             state.festival = data;
             console.log('GET response:', JSON.stringify(data, "", 2));
-            renderEdit(data);        })
+            renderEditName(data);
+        })
+        .fail(function (jqXHR, textStatus, err) {
+            console.log('AJAX error response:', textStatus);
+        });
+}
+
+function getApiById_Date(state) {
+    $.ajax({
+        type: 'GET',
+        url: url + "/" + state,
+        dataType: 'json'
+    })
+        .done(function (data) {
+            state.festival = data;
+            console.log('GET response:', JSON.stringify(data, "", 2));
+            renderEditDate(data);
+        })
+        .fail(function (jqXHR, textStatus, err) {
+            console.log('AJAX error response:', textStatus);
+        });
+}
+
+function getApiById_Location(state) {
+    $.ajax({
+        type: 'GET',
+        url: url + "/" + state,
+        dataType: 'json'
+    })
+        .done(function (data) {
+            state.festival = data;
+            console.log('GET response:', JSON.stringify(data, "", 2));
+            renderEditLocation(data);
+        })
         .fail(function (jqXHR, textStatus, err) {
             console.log('AJAX error response:', textStatus);
         });
@@ -88,32 +121,35 @@ function renderFestivalList(state) {
 
 }
 
-function renderEdit(state) {
+function renderEditName(state) {
     $('#updateName').val(state.name);
+};
+
+function renderEditDate(state) {
     let date = state.date.toString().slice(0, 10)
     $('#updateDate').val(date);
+};
+
+function renderEditLocation(state) {
     $('#updateLocation').val(state.location);
-}
+};
 
 $(document).on('click', '.nameEdit', function (e) {
     e.preventDefault();
     const id = $(this).parents().attr("value");
-    console.log(id);
-    //getApiById(id);
+    getApiById_Name(id);
 });
 
 $(document).on('click', '.dateEdit', function (e) {
     e.preventDefault();
     const id = $(this).parents().attr("value");
-    console.log(id);
-    //getApiById(id);
+    getApiById_Date(id);
 });
 
 $(document).on('click', '.locationEdit', function (e) {
     e.preventDefault();
     const id = $(this).parents().attr("value");
-    console.log(id);
-    //getApiById(id);
+    getApiById_Location(id);
 });
 
 $('#add').click(function (e) {
