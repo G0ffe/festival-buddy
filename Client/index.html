@@ -12,12 +12,12 @@
     <main>
         <div class="listFestivals">
             <button type="submit" id="apicheck">PRESS ME!</button>
-        </div> 
+        </div>
 
         <div class="addNew">
             <form id="addFestival">
                 <label>Name:</label><br>
-                <input type="text" name="name" id="name" placeholder="Name" required="required"><br> 
+                <input type="text" name="name" id="name" placeholder="Name" required="required"><br>
                 <label>Date:</label><br>
                 <input type="date" name="date" id="date" required="required"><br>
                 <label>Location:</label><br>
@@ -27,13 +27,23 @@
         </div>
 
         <div>
-            <form id="edit">
+            <form id="nameEdit">
                 <label>Name:</label><br>
-                <input type="text" name="name" id="updateName" placeholder="Name"><br> 
+                <input type="text" name="name" id="updateName"><br>
+                <input type="submit" name="update" id="update" value="Update"><br>
+            </form>
+        </div>
+        <div>
+            <form id="dateEdit">
                 <label>Date:</label><br>
                 <input type="date" name="date" id="updateDate"><br>
+                <input type="submit" name="update" id="update" value="Update"><br>
+            </form>
+        </div>
+        <div>
+            <form id="locationEdit">
                 <label>Location:</label><br>
-                <input type="text" name="location" id="updateLocation" placeholder="Location"><br>
+                <input type="text" name="location" id="updateLocation"><br>
                 <input type="submit" name="update" id="update" value="Update"><br>
             </form>
         </div>
