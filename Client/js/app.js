@@ -86,10 +86,11 @@ function sendToApi(state) {
 }
 
 function updateApi(state) {
+    console.log(state);
     $.ajax({
         type: "PUT",
         url: url + globalId,
-        data: {"id": "5956a9e39573e130a5ebf9c4"}
+        data: {state}
     })
         .done(function (data) {
             console.log('POST response:', JSON.stringify(data, "", 2));
@@ -112,7 +113,6 @@ function renderFestivalList(state) {
             time = fullDate.toString().slice(17);
             const html = `<ul><li value="${state.festivals[i].id}">${state.festivals[i].name}<button class="nameEdit">Edit</button></li><li value="${state.festivals[i].id}">Date: ${date}<button class="dateEdit">Edit</button></li><li>Time: ${time}</li><li value="${state.festivals[i].id}">Location: ${state.festivals[i].location}<button class="locationEdit">Edit</button></li></ul>`
             $('.listFestivals').append(html);
-            
         }
     }
 
