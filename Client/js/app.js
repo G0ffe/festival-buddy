@@ -2,8 +2,8 @@ const state = {
     festival: []
 };
 
-let url = "http://localhost:8080/festivals";
-
+let url = "http://localhost:8080/festivals/";
+let globalId = '';
 
 function getApi(state) {
     $.ajax({
@@ -24,7 +24,7 @@ function getApi(state) {
 function getApiById_Name(state) {
     $.ajax({
         type: 'GET',
-        url: url + "/" + state,
+        url: url + state,
         dataType: 'json'
     })
         .done(function (data) {
@@ -87,15 +87,16 @@ function sendToApi(state) {
 
 function updateApi(state) {
     $.ajax({
-        type: PUT,
-        url: url,
-        data: state
+        type: "PUT",
+        url: url + globalId,
+        data: {"id": "5956a9e39573e130a5ebf9c4"}
     })
         .done(function (data) {
             console.log('POST response:', JSON.stringify(data, "", 2));
         })
         .fail(function (jqXHR, textStatus, err) {
             console.log('AJAX error response:', textStatus);
+            console.log(state);
         });
 }
 
@@ -106,15 +107,12 @@ function renderFestivalList(state) {
     else {
         $('.listFestivals').empty();
         for (let i = 0; i < state.festivals.length; i++) {
-            $('.listFestivals').append(`<ul>`);
-            $('.listFestivals').append(`<li value="${state.festivals[i].id}">${state.festivals[i].name}<button class="nameEdit">Edit</button></li>`);
             let fullDate = (new Date(state.festivals[i].date));
             date = fullDate.toString().slice(0, 16);
             time = fullDate.toString().slice(17);
-            $('.listFestivals').append(`<li value="${state.festivals[i].id}">Date: ${date}<button class="dateEdit">Edit</button></li>`);
-            $('.listFestivals').append(`<li>Time: ${time}</li>`);
-            $('.listFestivals').append(`<li value="${state.festivals[i].id}">Location: ${state.festivals[i].location}<button class="locationEdit">Edit</button></li>`);        
-            $('.listFestivals').append(`</ul>`);
+            const html = `<ul><li value="${state.festivals[i].id}">${state.festivals[i].name}<button class="nameEdit">Edit</button></li><li value="${state.festivals[i].id}">Date: ${date}<button class="dateEdit">Edit</button></li><li>Time: ${time}</li><li value="${state.festivals[i].id}">Location: ${state.festivals[i].location}<button class="locationEdit">Edit</button></li></ul>`
+            $('.listFestivals').append(html);
+            
         }
     }
 
@@ -135,20 +133,22 @@ function renderEditLocation(state) {
 
 $(document).on('click', '.nameEdit', function (e) {
     e.preventDefault();
-    const id = $(this).parents().attr("value");
-    getApiById_Name(id);
+    globalId = $(this).parents().attr("value");
+    getApiById_Name(globalId);
 });
 
 $(document).on('click', '.dateEdit', function (e) {
     e.preventDefault();
-    const id = $(this).parents().attr("value");
-    getApiById_Date(id);
+    globalId = $(this).parents().attr("value");
+    console.log(globalId);
+    //getApiById_Date(id);
 });
 
 $(document).on('click', '.locationEdit', function (e) {
     e.preventDefault();
-    const id = $(this).parents().attr("value");
-    getApiById_Location(id);
+    globalId = $(this).parents().attr("value");
+    console.log(globalId);
+    //getApiById_Location(id);
 });
 
 $('#add').click(function (e) {
@@ -161,7 +161,7 @@ $('#add').click(function (e) {
 
 $('#updateNameButton').click(function (e) {
     e.preventDefault();
-    const name = $('#updateName').val();
+    const name = `"id": "${globalId}", "name": "${$('#updateName').val()}"`;
     updateApi(name);
 });
 
