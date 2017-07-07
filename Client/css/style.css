@@ -1,0 +1,36 @@
+.fa-pencil, .fa-window-close {
+    color: lightgrey;
+    cursor:pointer;
+}
+
+.fa-pencil:hover {
+    color: black;
+}
+
+.fa-window-close:hover {
+    color: #DB0000;
+}
+
+#add {
+    width: 71px;
+}
+
+ul {
+    margin-bottom: 30px;
+}
+
+li {
+    list-style: none;
+    font-size: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.fa-window-close {
+    float: right;
+    margin-right: -35px;
+}
+
+.fa-pencil {
+    float: right;
+}

@@ -9,6 +9,7 @@ const {Festival} = require('./models');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('../Client'))
 
 
@@ -64,13 +65,13 @@ app.post('/festivals', (req, res) => {
 });
 
 app.put('/festivals/:id', (req, res) => {
-
-    if(!(req.params.id && req.body.id && req.params.id === req.body.id)) {
-        const message = (`Request path id (${req.params.id}) and request body id ` +
-        `(${req.body.id}) must match`);
-        console.error(message);
-        res.sendStatus(400).json({message: message});
-    }
+    console.log(req.body);
+    //if(!(req.params.id && req.body.id && req.params.id === req.body.id)) {
+    //   const message = (`Request path id (${req.params.id}) and request body id ` +
+    //    `(${req.body.id}) must match`);
+    //    console.error(message);
+    //    res.sendStatus(400).json({message: message});
+    //}
 
     const toUpdate = {};
     const updateableFields = ['name', 'date', 'location'];
