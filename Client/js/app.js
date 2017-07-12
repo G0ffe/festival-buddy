@@ -192,7 +192,7 @@ function renderFestivalList(state) {
             let fullDate = (new Date(state.festivals[i].date));
             date = fullDate.toString().slice(0, 16);
             time = state.festivals[i].time;
-            const html = `<ul><li value="${state.festivals[i].id}">Name: ${state.festivals[i].name}   <button type="button" class="nameEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button> <button class="deleteButton"><i class="fa fa-window-close delete" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}">Date: ${date}    <button class="dateEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}">Time: ${time}    <button class="timeEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}">Location: ${state.festivals[i].location}    <button class="locationEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li></ul>`
+            const html = `<ul><li value="${state.festivals[i].id}"><i class="bold">Name:</i> ${state.festivals[i].name}   <button type="button" class="nameEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button> <button class="deleteButton"><i class="fa fa-window-close delete" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><i class="bold">Date:</i> ${date}    <button class="dateEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><i class="bold">Time: </i>${time}    <button class="timeEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><i class="bold">Location: </i>${state.festivals[i].location}    <button class="locationEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li></ul>`
             $('.listFestivals').append(html);
         }
     }
@@ -263,6 +263,7 @@ $('.cancelEditButton').click(function (e) {
     $('.dateEdit').addClass('hidden');
     $('.timeEdit').addClass('hidden');
     $('.locationEdit').addClass('hidden');
+    $('.apiDelete').addClass('hidden');
 });
 
 $('#add').click(function (e) {
@@ -319,6 +320,7 @@ $('#apicheck').click(function (e) {
     getApi(state);
     $('#apicheck').addClass('active');
     $('.addNew').addClass('hidden');
+    $('.apiDelete').addClass('hidden');
     $('.listFestivals').removeClass('hidden');
     $('#addNewFestival').removeClass('active');
 });
@@ -326,6 +328,7 @@ $('#apicheck').click(function (e) {
 $('#addNewFestival').click(function () {
     $('#addNewFestival').addClass('active');
     $('.listFestivals').addClass('hidden');
+    $('.apiDelete').addClass('hidden');
     $('.addNew').removeClass('hidden');
     $('#apicheck').removeClass('active');
 });

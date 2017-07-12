@@ -5,69 +5,94 @@
     <title>Festival Buddy</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/fb4e16c158.js"></script>
 </head>
 
 <body>
-    <main class="container">
-    <h1>Festival Buddy</h1>
+    <nav class="container">
+        <h1 class="text-center">Festival Buddy</h1>
         <div class="btn-group btn-group-lg">
             <button type="submit" id="apicheck" class="btn btn-primary">All Festivals</button>
             <button type="submit" id="addNewFestival" class="btn btn-primary">Add new Festivals</button>
         </div>
+    </nav>
+
+    <main class="container">
+
         <div class="listFestivals hidden">
 
         </div>
 
         <div class="addNew hidden">
             <form id="addFestival">
-                <label>Name:</label><br>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="required"><br>
-                <label>Date:</label><br>
-                <input type="date" name="date" id="date" class="form-control" required="required"><br>
-                <label>Time:</label><br>
-                <input type="time" name="time" id="time" class="form-control" required="required"><br> 
-                <label>Location:</label><br>
-                <input type="text" name="location" id="location" class="form-control" placeholder="Location" required="required"><br>
-                <input type="submit" name="add" id="add" class="btn btn-success" value="Add"><br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Name:</label><br>
+                        <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Name" required="required"><br>
+                        <label>Date:</label><br>
+                        <input type="date" name="date" id="date" class="form-control input-lg" required="required"><br>
+                        <label>Time:</label><br>
+                        <input type="time" name="time" id="time" class="form-control input-lg" required="required"><br>
+                        <label>Location:</label><br>
+                        <input type="text" name="location" id="location" class="form-control input-lg" placeholder="Location" required="required"><br>
+                        <input type="submit" name="add" id="add" class="btn btn-success" value="Add"><br>
+                    </div>
+                </div>
             </form>
         </div>
-        
+
         <div class="nameEdit hidden">
             <form id="nameEdit">
-                <label>Name:</label><br>
-                <input type="text" name="name" id="updateName" class="form-control"><br>
-                <input type="submit" name="update" id="updateNameButton" class="btn btn-success" value="Update">
-                <input type="button" name="cancel" class="btn btn-danger cancelEditButton" value="Cancel"><br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Name:</label><br>
+                        <input type="text" name="name" id="updateName" class="form-control input-lg"><br>
+                        <input type="submit" name="update" id="updateNameButton" class="btn btn-success" value="Update">
+                        <input type="button" name="cancel" class="btn btn-danger cancelEditButton" value="Cancel"><br>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="dateEdit hidden">
             <form id="dateEdit">
-                <label>Date:</label><br>
-                <input type="date" name="date" id="updateDate" class="form-control"><br>
-                <input type="submit" name="update" id="updateDateButton" class="btn btn-success" value="Update">
-                <input type="button" name="cancel" class="btn btn-danger cancelEditButton" value="Cancel"><br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Date:</label><br>
+                        <input type="date" name="date" id="updateDate" class="form-control input-lg"><br>
+                        <input type="submit" name="update" id="updateDateButton" class="btn btn-success" value="Update">
+                        <input type="button" name="cancel" class="btn btn-danger cancelEditButton" value="Cancel"><br>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="timeEdit hidden">
             <form id="timeEdit">
-                <label>Date:</label><br>
-                <input type="time" name="time" id="updateTime" class="form-control"><br>
-                <input type="submit" name="update" id="updateTimeButton" class="btn btn-success" value="Update">
-                <input type="button" name="cancel" class="btn btn-danger cancelEditButton" value="Cancel"><br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Date:</label><br>
+                        <input type="time" name="time" id="updateTime" class="form-control input-lg"><br>
+                        <input type="submit" name="update" id="updateTimeButton" class="btn btn-success" value="Update">
+                        <input type="button" name="cancel" class="btn btn-danger cancelEditButton" value="Cancel"><br>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="locationEdit hidden">
             <form id="locationEdit">
-                <label>Location:</label><br>
-                <input type="text" name="location" id="updateLocation" class="form-control"><br>
-                <input type="submit" name="update" id="updateLocationButton" class="btn btn-success" value="Update">
-                <input type="button" name="cancel" class="btn btn-danger cancelEditButton" value="Cancel"><br>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Location:</label><br>
+                        <input type="text" name="location" id="updateLocation" class="form-control input-lg"><br>
+                        <input type="submit" name="update" id="updateLocationButton" class="btn btn-success" value="Update">
+                        <input type="button" name="cancel" class="btn btn-danger cancelEditButton" value="Cancel"><br>
+                    </div>
+                </div>
             </form>
         </div>
-        
+
         <div class="apiDelete hidden">
             <form id="locationEdit">
                 <div class="bg-danger">
@@ -80,8 +105,10 @@
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
 </body>
 
