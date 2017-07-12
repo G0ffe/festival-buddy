@@ -40,8 +40,8 @@ app.get('/festivals/:id', (req, res) => {
 });
 
 app.post('/festivals', (req, res) => {
-
-    const requiredFields = ['name', 'date', 'location'];
+console.log(req.body);
+    const requiredFields = ['name', 'date', 'time', 'location'];
     for (let i=0; i<requiredFields.length; i++) {
         const field = requiredFields[i];
         if (!(field in req.body)) {
@@ -55,17 +55,17 @@ app.post('/festivals', (req, res) => {
     .create({
         name: req.body.name,
         date: req.body.date,
+        time: req.body.time,
         location: req.body.location
     })
     .then(
         festival => res.status(201).json(festival.apiRepr()))
         .catch(err => {
-            res.status(500).json({message: 'Internal server error'});
+            res.status(500).json(err);
         });
 });
 
 app.put('/festivals/:id', (req, res) => {
-    console.log(req.body);
     //if(!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     //   const message = (`Request path id (${req.params.id}) and request body id ` +
     //    `(${req.body.id}) must match`);
@@ -74,7 +74,7 @@ app.put('/festivals/:id', (req, res) => {
     //}
 
     const toUpdate = {};
-    const updateableFields = ['name', 'date', 'location'];
+    const updateableFields = ['name', 'date', 'time', 'location'];
 
     updateableFields.forEach(field => {
         if (field in req.body) {

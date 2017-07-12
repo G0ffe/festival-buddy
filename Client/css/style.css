@@ -26,11 +26,17 @@ li {
     padding-bottom: 2px;
 }
 
-.fa-window-close {
+.deleteButton {
+    background: none;
+    border: none;
+    outline: none;
     float: right;
-    margin-right: -35px;
+    margin-right: -45px;
 }
 
-.fa-pencil {
+.nameEditButton, .dateEditButton, .timeEditButton, .locationEditButton {
+    background: none;
+    border: none;
+    outline: none;
     float: right;
 }

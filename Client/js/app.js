@@ -38,6 +38,7 @@ function getApiById_Name(state) {
 }
 
 function getApiById_Date(state) {
+    console.log(state);
     $.ajax({
         type: 'GET',
         url: url + state,
@@ -86,12 +87,13 @@ function getApiById_Location(state) {
 }
 
 function sendToApi(state) {
+    console.log($("#time").val());
     $.ajax({
         type: "POST",
         url: url,
         dataType: 'json',
         contentType: 'application/json',
-        data: JSON.stringify({ "name": $('#name').val(), "date": $('#date').val(), "location": $('#location').val() })
+        data: JSON.stringify({ "name": $('#name').val(), "date": $('#date').val(), "time": $('#time').val(), "location": $('#location').val() })
     })
         .done(function (data) {
             console.log('POST response:', JSON.stringify(data, "", 2));
@@ -102,67 +104,82 @@ function sendToApi(state) {
 }
 
 function updateApiName(name) {
-   $.ajax({
-       type: "PUT",
-       url: url + globalId,
-       data: { name: name }
-   })
-       .done(function (data) {
-           console.log('PUT response:', JSON.stringify(data, "", 2));
-           getApi(state);
-           $('#updateName').val("");
-       })
-       .fail(function (jqXHR, textStatus, err) {
-           console.log('AJAX error response:', textStatus);
-       });
+    $.ajax({
+        type: "PUT",
+        url: url + globalId,
+        data: { name: name }
+    })
+        .done(function (data) {
+            console.log('PUT response:', JSON.stringify(data, "", 2));
+            getApi(state);
+            $('#updateName').val("");
+        })
+        .fail(function (jqXHR, textStatus, err) {
+            console.log('AJAX error response:', textStatus);
+        });
 }
 
 function updateApiDate(date) {
-   $.ajax({
-       type: "PUT",
-       url: url + globalId,
-       data: { date: date }
-   })
-       .done(function (data) {
-           console.log('PUT response:', JSON.stringify(data, "", 2));
-           getApi(state);
-           $('#updateDate').val("");
-       })
-       .fail(function (jqXHR, textStatus, err) {
-           console.log('AJAX error response:', textStatus);
-       });
+    $.ajax({
+        type: "PUT",
+        url: url + globalId,
+        data: { date: date }
+    })
+        .done(function (data) {
+            console.log('PUT response:', JSON.stringify(data, "", 2));
+            getApi(state);
+            $('#updateDate').val("");
+        })
+        .fail(function (jqXHR, textStatus, err) {
+            console.log('AJAX error response:', textStatus);
+        });
 }
 
 function updateApiTime(time) {
-   $.ajax({
-       type: "PUT",
-       url: url + globalId,
-       data: { date: time }
-   })
-       .done(function (data) {
-           console.log('PUT response:', JSON.stringify(data, "", 2));
-           getApi(state);
-           $('#updateDate').val("");
-       })
-       .fail(function (jqXHR, textStatus, err) {
-           console.log('AJAX error response:', textStatus);
-       });
+    console.log(time);
+    $.ajax({
+        type: "PUT",
+        url: url + globalId,
+        data: { time: time }
+    })
+        .done(function (data) {
+            console.log('PUT response:', JSON.stringify(data, "", 2));
+            getApi(state);
+            $('#updateDate').val("");
+        })
+        .fail(function (jqXHR, textStatus, err) {
+            console.log('AJAX error response:', textStatus);
+        });
 }
 
 function updateApiLocation(location) {
-   $.ajax({
-       type: "PUT",
-       url: url + globalId,
-       data: { location: location }
-   })
-       .done(function (data) {
-           console.log('PUT response:', JSON.stringify(data, "", 2));
-           getApi(state);
-           $('#updateLocation').val("");
-       })
-       .fail(function (jqXHR, textStatus, err) {
-           console.log('AJAX error response:', textStatus);
-       });
+    $.ajax({
+        type: "PUT",
+        url: url + globalId,
+        data: { location: location }
+    })
+        .done(function (data) {
+            console.log('PUT response:', JSON.stringify(data, "", 2));
+            getApi(state);
+            $('#updateLocation').val("");
+        })
+        .fail(function (jqXHR, textStatus, err) {
+            console.log('AJAX error response:', textStatus);
+        });
+}
+
+function deleteApi() {
+    $.ajax({
+        type: "DELETE",
+        url: url + globalId,
+    })
+        .done(function (data) {
+            console.log('Festival Deleted');
+            getApi(state);
+        })
+        .fail(function (jqXHR, textStatus, err) {
+            console.log('AJAX error response:', textStatus);
+        });
 }
 
 function renderFestivalList(state) {
@@ -174,8 +191,8 @@ function renderFestivalList(state) {
         for (let i = 0; i < state.festivals.length; i++) {
             let fullDate = (new Date(state.festivals[i].date));
             date = fullDate.toString().slice(0, 16);
-            time = fullDate.toString().slice(17);
-            const html = `<ul><li value="${state.festivals[i].id}">Name: ${state.festivals[i].name}   <i class="fa fa-pencil nameEdit" aria-hidden="true"></i><i class="fa fa-window-close delete" aria-hidden="true"></i></li><li value="${state.festivals[i].id}">Date: ${date}   <i class="fa fa-pencil dateEdit" aria-hidden="true"></i></li><li value="${state.festivals[i].id}">Time: ${time}   <i class="fa fa-pencil timeEdit" aria-hidden="true"></i></li><li value="${state.festivals[i].id}">Location: ${state.festivals[i].location}   <i class="fa fa-pencil locationEdit" aria-hidden="true"></i></li></ul>`
+            time = state.festivals[i].time;
+            const html = `<ul><li value="${state.festivals[i].id}">Name: ${state.festivals[i].name}   <button type="button" class="nameEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button> <button class="deleteButton"><i class="fa fa-window-close delete" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}">Date: ${date}    <button class="dateEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}">Time: ${time}    <button class="timeEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}">Location: ${state.festivals[i].location}    <button class="locationEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li></ul>`
             $('.listFestivals').append(html);
         }
     }
@@ -200,29 +217,52 @@ function renderEditLocation(state) {
     $('#updateLocation').val(state.location);
 };
 
-$(document).on('click', '.nameEdit', function (e) {
+$(document).on('click', '.nameEditButton', function (e) {
     e.preventDefault();
     globalId = $(this).parents().attr("value");
     getApiById_Name(globalId);
+    $('.listFestivals').addClass('hidden');
+    $('.nameEdit').removeClass('hidden');
 });
 
-$(document).on('click', '.dateEdit', function (e) {
+$(document).on('click', '.dateEditButton', function (e) {
     e.preventDefault();
     globalId = $(this).parents().attr("value");
     getApiById_Date(globalId);
+    $('.listFestivals').addClass('hidden');
+    $('.dateEdit').removeClass('hidden');
 });
 
-$(document).on('click', '.timeEdit', function (e) {
+$(document).on('click', '.timeEditButton', function (e) {
     e.preventDefault();
-    console.log("Clicked");
     globalId = $(this).parents().attr("value");
     getApiById_Time(globalId);
+    $('.listFestivals').addClass('hidden');
+    $('.timeEdit').removeClass('hidden');
 });
 
-$(document).on('click', '.locationEdit', function (e) {
+$(document).on('click', '.locationEditButton', function (e) {
     e.preventDefault();
     globalId = $(this).parents().attr("value");
     getApiById_Location(globalId);
+    $('.listFestivals').addClass('hidden');
+    $('.locationEdit').removeClass('hidden');
+});
+
+$(document).on('click', '.deleteButton', function (e) {
+    e.preventDefault();
+    globalId = $(this).parents().attr("value");
+    $('.listFestivals').addClass('hidden');
+    $('.apiDelete').removeClass('hidden');
+});
+
+$('.cancelEditButton').click(function (e) {
+    e.preventDefault();
+    $('.listFestivals').removeClass('hidden');
+    $('.nameEdit').addClass('hidden');
+    $('.dateEdit').addClass('hidden');
+    $('.timeEdit').addClass('hidden');
+    $('.locationEdit').addClass('hidden');
 });
 
 $('#add').click(function (e) {
@@ -230,40 +270,62 @@ $('#add').click(function (e) {
     sendToApi(state);
     $('#name').val("");
     $('#date').val("");
+    $('#time').val("");
     $('#location').val("");
 });
 
 $('#updateNameButton').click(function (e) {
-   e.preventDefault();
-   const name = $('#updateName').val();
-   updateApiName(name);
+    e.preventDefault();
+    const name = $('#updateName').val();
+    updateApiName(name);
+    $('.listFestivals').removeClass('hidden');
+    $('.nameEdit').addClass('hidden');
+
 });
 
 $('#updateDateButton').click(function (e) {
-   e.preventDefault();
-   const date = $('#updateDate').val();
-   updateApiDate(date);
+    e.preventDefault();
+    const date = $('#updateDate').val();
+    updateApiDate(date);
+    $('.listFestivals').removeClass('hidden');
+    $('.dateEdit').addClass('hidden');
 });
 
 $('#updateTimeButton').click(function (e) {
-   e.preventDefault();
-   const time = $('#updateTime').val();
-   updateApiTime(time);
+    e.preventDefault();
+    const time = $('#updateTime').val();
+    updateApiTime(time);
+    $('.listFestivals').removeClass('hidden');
+    $('.timeEdit').addClass('hidden');
 });
-
 
 $('#updateLocationButton').click(function (e) {
-   e.preventDefault();
-   const location = $('#updateLocation').val();
-   updateApiLocation(location);
+    e.preventDefault();
+    const location = $('#updateLocation').val();
+    updateApiLocation(location);
+    $('.listFestivals').removeClass('hidden');
+    $('.locationEdit').addClass('hidden');
 });
 
+$('#deleteButton').click(function (e) {
+    e.preventDefault();
+    deleteApi();
+    $('.listFestivals').removeClass('hidden');
+    $('.apiDelete').addClass('hidden')
+})
 
 $('#apicheck').click(function (e) {
     e.preventDefault();
     getApi(state);
+    $('#apicheck').addClass('active');
+    $('.addNew').addClass('hidden');
+    $('.listFestivals').removeClass('hidden');
+    $('#addNewFestival').removeClass('active');
 });
 
-$('#addNewFestival').click(function() {
+$('#addNewFestival').click(function () {
+    $('#addNewFestival').addClass('active');
+    $('.listFestivals').addClass('hidden');
     $('.addNew').removeClass('hidden');
-})
+    $('#apicheck').removeClass('active');
+});
