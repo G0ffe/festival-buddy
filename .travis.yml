@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: p5F8YX/jv1/TiBHSdVgDTyHiAnSfL3ooDXS1hzJGtXQj4bI46mdhAr9ju837+qTKKpnk1mefWqP9X4z2QPWyL5oso6ZkwqiiZW7jsbr+4QHh/Ey7GHgJ7Sp6zxTpzgXRy2814nAhG+1ek6dpsJk+5jbuNy/4/ADNKZnARYPUqgWgL6ntzy5hF8cU47ZmwAQWNLu8fLBP9ZvoW4CXVVwyOimin0mmqDIZwAJIjPrND/RqOoEdPqpY2V3AsvOVWBrv0fwfuBr5YDQNsziWtVhS6/X9gUqM/dMYWKmpUIiRhqk4pVcM7ot9jXceFSfPJkHCaUXa7bmI2wskNKCpeZekLMCm/KKvkivVlShSdJwqeGSVdQwFrMk1XqT+459B4nZA00ixMWbpNcj+2VMBPAv55I3VNbzquQ1na5BSwNLmkLwXOPQ5fBBHT5uKzd8RY567azLWEcNDkUlZqlBWw1W8k257OJfhIG6GrIZSCu1XbTy1AexyDEMzQabqD8QC7dcR8Rj6scQ4h4sm3KfnE5R+m6Y7dgKkWRQDdubFOFDulIV8eKU6yqq1neM/AGpBi3X3IboDFIV9+NlAVVhTu/fTkBBedWj5Y9RsIxTW66IPSRkVt6YJ49W0jjKKg52V5qzfedHRhdPcuXWbhqwD4K73OI6Z+cB+JuFWUVqA+cxIopo=
+  app: pacific-falls-73497
+  on:
+    repo: G0ffe/festival-buddy
