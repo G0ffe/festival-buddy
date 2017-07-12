@@ -27,6 +27,7 @@ function generateFestivalData() {
     return {
         name: faker.random.word(),
         date: faker.date.future(),
+        time: "10:17",
         location: faker.address.city()
     }
 }
