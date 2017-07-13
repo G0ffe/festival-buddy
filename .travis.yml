@@ -2,3 +2,10 @@ language: node_js
 node_js: node
 services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: RFJlXKphMvBMFI3Jy0kEZLnpqUpV2Rt9cZnpeDz7W6EWgLo4Dp0EGcjGq5eD+UiGKw/6nYwj2APSMzCiEvC+VDIvzPgH16ZsC+aNoSYrH7q174WFSIZc4CH2uJHgbNrIFtTEhPZzjEjVWnx/6YCR0AplCc9Qc0QEd69pwegwqvZN27njS97jvNpGvFIZ0TWLZz3fL9cF+oHf3/qm58Ml8kE3P7yjyyXYFRWEFJ/LRiXQ/BuRM/x8uiH41Z4crFg+uHGH9Ufkuwcq6JiNf4od9rPETr5YHTmPdD+5PwOcmd8bPO/QkI0ff6XIupbTdLDvZ+B6WNRTz5zZSA+zU/4G+InTQFubS+M+HzNNbPS1o4PytXh8dKmdJWP0hiQqWXyBz3iX0qxq0rfIVUaJ1sBH+lARutyk/8KH0b8YHiJVdZmsE6nVLd956HjTRzNsveUkkY3gOWLzEv1moWViSXkphEhVOtpyczWwXKjM2s5peLHeOUPpIltaVpoc2gHyyc2LFDncdjyqI184hu3wYvXV2r0nYEZg4y95ROViqv8fa3BRFblY1Wiy4gucC2fdg6bwU3fd2AWb+sppzf6xjQSpM+01ZVwzVOn0bymNdAPa2TLjWMnlWQnmysxeEBbrgqrdyE4u2WSOy3QHdu+z8++nvL3Do3WmvQBBko5ACgmZWrQ=
+  app: radiant-sands-78965
+  on:
+    repo: G0ffe/festival-buddy
