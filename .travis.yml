@@ -4,7 +4,8 @@ services:
 - mongodb
 deploy:
   provider: heroku
-  
+  api_key:
+    secure: c22fac7a-a79f-48d7-a18a-8d8535d5f8bc
   app: radiant-sands-78965
   on:
     repo: G0ffe/festival-buddy
