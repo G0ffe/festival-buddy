@@ -2,7 +2,7 @@ const state = {
     festival: []
 };
 
-let url = "http://localhost:8080/festivals/";
+let url = "https://radiant-sands-78965.herokuapp.com/festivals/";
 let globalId = '';
 
 function getApi(state) {
