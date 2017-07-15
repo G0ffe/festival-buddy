@@ -155,6 +155,11 @@ li {
     float: right;
 }
 
+#updateNameButton, #updateDateButton, #updateTimeButton, #updateLocationButton, #deleteButton, .cancelEditButton {
+    border: none;
+    outline: none;
+}
+
 .bold {
     font-weight: bold;
 }

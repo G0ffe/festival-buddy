@@ -323,6 +323,10 @@ $('#apicheck').click(function (e) {
     $('.addNew').addClass('hidden');
     $('.apiDelete').addClass('hidden');
     $('.listFestivals').removeClass('hidden');
+    $('.nameEdit').addClass('hidden');
+    $('.dateEdit').addClass('hidden');
+    $('.timeEdit').addClass('hidden');
+    $('.locationEdit').addClass('hidden');
     $('nav').removeClass('with-background');
     $('h1').addClass('active');
     $('.tag-line').addClass('active');
@@ -338,6 +342,10 @@ $('#addNewFestival').click(function () {
     $('.apiDelete').addClass('hidden');
     $('.addNew').removeClass('hidden');
     $('nav').removeClass('with-background');
+    $('.nameEdit').addClass('hidden');
+    $('.dateEdit').addClass('hidden');
+    $('.timeEdit').addClass('hidden');
+    $('.locationEdit').addClass('hidden');
     $('h1').addClass('active');
     $('.tag-line').addClass('active');
     $('.front-button-1').addClass('active');
