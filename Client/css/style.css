@@ -1,6 +1,10 @@
+body {
+    background-color: #f4f4f4;
+}
+
 nav {
     margin-bottom: 40px;
-    height: 400px;
+    height: 155px;
     width: 100vw;
 }
 
@@ -14,9 +18,10 @@ nav {
 
 h1 {
     color: white;
-    font-size: 60px;
+    font-size: 90px;
     text-align: center;
     margin-top: 200px;
+    font-family: 'Shadows Into Light Two';
 }
 
 .divide { 
@@ -27,7 +32,11 @@ h1 {
 
 .tag-line {
     color: white;
+    font-family: 'Wire One';
     text-align: center;
+    font-style: italic;
+    font-size: 30px;
+    letter-spacing: 3px;
 }
 
 .button-wrapper {
@@ -62,6 +71,42 @@ h1 {
     background: rgba(255, 255, 255, 0.3);
 }
 
+.active {
+    color: black;
+    border-color: black;    
+}
+
+.divide.active {
+    background-color: black;
+}
+
+h1.active {
+    margin-top: 0;
+    font-size: 40px;
+}
+
+.tag-line.active {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.button-wrapper.active {
+    margin-top: 20px;
+    width: 300px;
+}
+
+.front-button-1.active, .front-button-2.active {
+    height: 30px;
+    padding: 0 15px;
+    border-width: 1px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.front-button-1.active:hover, .front-button-2.active:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 .fa-pencil, .fa-window-close {
     color: lightgrey;
     cursor:pointer;
@@ -76,11 +121,15 @@ h1 {
 }
 
 #add {
-    width: 71px;
+    width: 100px;
+    border: none;
+    outline: none;
 }
 
 ul {
     margin-bottom: 30px;
+    background-color: white;
+    border-radius: 5px;
 }
 
 li {

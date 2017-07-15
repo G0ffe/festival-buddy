@@ -323,8 +323,13 @@ $('#apicheck').click(function (e) {
     $('.addNew').addClass('hidden');
     $('.apiDelete').addClass('hidden');
     $('.listFestivals').removeClass('hidden');
-    $('#addNewFestival').removeClass('active');
     $('nav').removeClass('with-background');
+    $('h1').addClass('active');
+    $('.tag-line').addClass('active');
+    $('.front-button-1').addClass('active');
+    $('.front-button-2').addClass('active');
+    $('.divide').addClass('active');
+    $('.button-wrapper').addClass('active');
 });
 
 $('#addNewFestival').click(function () {
@@ -332,5 +337,11 @@ $('#addNewFestival').click(function () {
     $('.listFestivals').addClass('hidden');
     $('.apiDelete').addClass('hidden');
     $('.addNew').removeClass('hidden');
-    $('#apicheck').removeClass('active');
+    $('nav').removeClass('with-background');
+    $('h1').addClass('active');
+    $('.tag-line').addClass('active');
+    $('.front-button-1').addClass('active');
+    $('.front-button-2').addClass('active');
+    $('.divide').addClass('active');
+    $('.button-wrapper').addClass('active');
 });
