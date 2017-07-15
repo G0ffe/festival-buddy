@@ -1,5 +1,65 @@
 nav {
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
+    height: 400px;
+    width: 100vw;
+}
+
+.with-background {
+    background-image: url("../img/cover.png");
+    background-size: cover;
+    background-position: center bottom;
+    height: 100vh;
+    margin-bottom: 0;
+}
+
+h1 {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.divide { 
+  border: 0; 
+  height: 1px;
+  background-color: white;
+}
+
+.tag-line {
+    color: white;
+    text-align: center;
+}
+
+.button-wrapper {
+    margin-top: 150px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.front-button-1 {
+    height: 60px;
+    background: none;
+    color: white;
+    padding: 0 30px;
+    border: 3px solid white;
+    border-radius: 30px;
+    outline: none;
+}
+
+.front-button-2 {
+    float: right;
+    height: 60px;
+    background: none;
+    color: white;
+    padding: 0 30px;
+    border: 3px solid white;
+    border-radius: 30px;
+    outline: none;
+}
+
+.front-button-1:hover, .front-button-2:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .fa-pencil, .fa-window-close {

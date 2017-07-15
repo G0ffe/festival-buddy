@@ -2,6 +2,7 @@ const state = {
     festival: []
 };
 
+
 let url = "https://radiant-sands-78965.herokuapp.com/festivals/";
 let globalId = '';
 
@@ -192,7 +193,7 @@ function renderFestivalList(state) {
             let fullDate = (new Date(state.festivals[i].date));
             date = fullDate.toString().slice(0, 16);
             time = state.festivals[i].time;
-            const html = `<ul><li value="${state.festivals[i].id}"><i class="bold">Name:</i> ${state.festivals[i].name}   <button type="button" class="nameEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button> <button class="deleteButton"><i class="fa fa-window-close delete" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><i class="bold">Date:</i> ${date}    <button class="dateEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><i class="bold">Time: </i>${time}    <button class="timeEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><i class="bold">Location: </i>${state.festivals[i].location}    <button class="locationEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li></ul>`
+            const html = `<ul><li value="${state.festivals[i].id}"><span class="bold">Name:</span> ${state.festivals[i].name}   <button type="button" class="nameEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button> <button class="deleteButton"><i class="fa fa-window-close delete" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><span class="bold">Date:</span> ${date}    <button class="dateEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><span class="bold">Time: </span>${time}    <button class="timeEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li><li value="${state.festivals[i].id}"><span class="bold">Location: </span>${state.festivals[i].location}    <button class="locationEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button></li></ul>`
             $('.listFestivals').append(html);
         }
     }
@@ -323,6 +324,7 @@ $('#apicheck').click(function (e) {
     $('.apiDelete').addClass('hidden');
     $('.listFestivals').removeClass('hidden');
     $('#addNewFestival').removeClass('active');
+    $('nav').removeClass('with-background');
 });
 
 $('#addNewFestival').click(function () {
