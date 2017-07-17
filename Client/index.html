@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="with-background">
+    <nav>
         <div class="container">
             <h1>Festival Buddy</h1>
             <hr class="divide">
@@ -29,22 +29,23 @@
     <main class="container">
 
         <div class="listFestivals hidden">
-
+            <ul id="listFestivals">
+            </ul>
         </div>
 
         <div class="addNew hidden">
             <form id="addFestival">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <label>Name:</label><br>
+                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                        <!-- <label>Name:</label><br> -->
                         <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Name" required="required"><br>
-                        <label>Date:</label><br>
+                        <!-- <label>Date:</label><br> -->
                         <input type="date" name="date" id="date" class="form-control input-lg" required="required"><br>
-                        <label>Time:</label><br>
+                        <!-- <label>Time:</label><br> -->
                         <input type="time" name="time" id="time" class="form-control input-lg" required="required"><br>
-                        <label>Location:</label><br>
+                        <!-- <label>Location:</label><br> -->
                         <input type="text" name="location" id="location" class="form-control input-lg" placeholder="Location" required="required"><br>
-                        <input type="submit" name="add" id="add" class="btn-lg btn-success" value="Add"><br>
+                        <input type="submit" name="add" id="add" class="btn-lg" value="Add"><br>
                     </div>
                 </div>
             </form>
@@ -53,11 +54,11 @@
         <div class="nameEdit hidden">
             <form id="nameEdit">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <label>Name:</label><br>
+                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                        <!-- <label>Name:</label><br> -->
                         <input type="text" name="name" id="updateName" class="form-control input-lg"><br>
-                        <input type="submit" name="update" id="updateNameButton" class="btn-lg btn-success" value="Update">
-                        <input type="button" name="cancel" class="btn-lg btn-danger cancelEditButton" value="Cancel"><br>
+                        <input type="submit" name="update" id="updateNameButton" class="btn-lg" value="Update">
+                        <input type="button" name="cancel" class="btn-lg cancelEditButton" value="Cancel"><br>
                     </div>
                 </div>
             </form>
@@ -65,11 +66,11 @@
         <div class="dateEdit hidden">
             <form id="dateEdit">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <label>Date:</label><br>
+                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                        <!-- <label>Date:</label><br> -->
                         <input type="date" name="date" id="updateDate" class="form-control input-lg"><br>
-                        <input type="submit" name="update" id="updateDateButton" class="btn-lg btn-success" value="Update">
-                        <input type="button" name="cancel" class="btn-lg btn-danger cancelEditButton" value="Cancel"><br>
+                        <input type="submit" name="update" id="updateDateButton" class="btn-lg" value="Update">
+                        <input type="button" name="cancel" class="btn-lg cancelEditButton" value="Cancel"><br>
                     </div>
                 </div>
             </form>
@@ -77,11 +78,11 @@
         <div class="timeEdit hidden">
             <form id="timeEdit">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <label>Date:</label><br>
+                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                        <!-- <label>Date:</label><br> -->
                         <input type="time" name="time" id="updateTime" class="form-control input-lg"><br>
-                        <input type="submit" name="update" id="updateTimeButton" class="btn-lg btn-success" value="Update">
-                        <input type="button" name="cancel" class="btn-lg btn-danger cancelEditButton" value="Cancel"><br>
+                        <input type="submit" name="update" id="updateTimeButton" class="btn-lg" value="Update">
+                        <input type="button" name="cancel" class="btn-lg cancelEditButton" value="Cancel"><br>
                     </div>
                 </div>
             </form>
@@ -89,11 +90,11 @@
         <div class="locationEdit hidden">
             <form id="locationEdit">
                 <div class="row">
-                    <div class="col-xs-6">
-                        <label>Location:</label><br>
+                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                        <!-- <label>Location:</label><br> -->
                         <input type="text" name="location" id="updateLocation" class="form-control input-lg"><br>
-                        <input type="submit" name="update" id="updateLocationButton" class="btn-lg btn-success" value="Update">
-                        <input type="button" name="cancel" class="btn-lg btn-danger cancelEditButton" value="Cancel"><br>
+                        <input type="submit" name="update" id="updateLocationButton" class="btn-lg" value="Update">
+                        <input type="button" name="cancel" class="btn-lg cancelEditButton" value="Cancel"><br>
                     </div>
                 </div>
             </form>
@@ -101,12 +102,14 @@
 
         <div class="apiDelete hidden">
             <form id="locationEdit">
-                <div class="bg-danger">
-                    <h3 class="text-danger">WARNIG</h3>
-                    <p class="text-danger">Are you sure you want to delete this festival?</p>
+                <div class="col-lg-12">
+                    <h3>WARNIG</h3>
+                    <p>Are you sure you want to delete this festival?</p>
                 </div>
-                <input type="submit" name="delete" id="deleteButton" class="btn-lg btn-danger" value="Yes, Delete this festival">
-                <input type="button" name="cancel" class="btn-lg btn-success cancelEditButton" value="Cancel"><br>
+                <div class="delete-wrapper">
+                <input type="submit" name="delete" id="deleteButton" class="btn-lg" value="Yes, Delete this festival">
+                <input type="button" name="cancel" class="btn-lg cancelEditButton" value="Cancel"><br>
+                </div>
             </form>
         </div>
     </main>

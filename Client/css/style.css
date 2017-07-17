@@ -1,24 +1,27 @@
 body {
-    background-color: #f4f4f4;
-}
-
-nav {
-    margin-bottom: 40px;
-    height: 155px;
-    width: 100vw;
-}
-
-.with-background {
     background-image: url("../img/cover.png");
     background-size: cover;
     background-position: center bottom;
     height: 100vh;
     margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 155px;
+    width: 100vw;
+}
+
+nav hr {
+    width: 50%;
 }
 
 h1 {
     color: white;
-    font-size: 90px;
+    font-size: 9rem;
     text-align: center;
     margin-top: 200px;
     font-family: 'Shadows Into Light Two';
@@ -40,7 +43,7 @@ h1 {
 }
 
 .button-wrapper {
-    margin-top: 150px;
+    margin-top: 30px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -72,43 +75,43 @@ h1 {
 }
 
 .active {
-    color: black;
-    border-color: black;    
+    color: #fff;
+    border-color: #fff;    
 }
 
 .divide.active {
-    background-color: black;
+    background-color: #fff;
 }
 
 h1.active {
     margin-top: 10px;
-    font-size: 40px;
+    /* font-size: 40px; */
 }
 
 .tag-line.active {
     margin-top: 0;
-    font-size: 16px;
+    /* font-size: 16px; */
 }
 
 .button-wrapper.active {
     margin-top: 20px;
-    width: 300px;
+    /* width: 300px; */
 }
 
-.front-button-1.active, .front-button-2.active {
+/* .front-button-1.active, .front-button-2.active {
     height: 30px;
     padding: 0 15px;
     border-width: 1px;
     border-radius: 15px;
     font-size: 14px;
-}
+} */
 
-.front-button-1.active:hover, .front-button-2.active:hover {
+/* .front-button-1.active:hover, .front-button-2.active:hover {
     background: rgba(0, 0, 0, 0.1);
-}
+} */
 
 .fa-pencil, .fa-window-close {
-    color: lightgrey;
+    color: #fff;
     cursor:pointer;
 }
 
@@ -122,22 +125,52 @@ h1.active {
 
 #add {
     width: 100px;
+    background: none;
     border: none;
+    outline: none;
+    border: 2px solid white;
+}
+
+#add:hover {
+    background: rgba(255, 255, 255, 0.3)
+}
+
+.addNew, .nameEdit, .dateEdit, .timeEdit, .locationEdit, .apiDelete {
+    margin-top: 150px;
+    color: #fff;
+}
+
+.addNew input, .nameEdit input, .dateEdit input, .timeEdit input, .locationEdit input {
+    background-color: rgba(255,255,255,0.1);
+    border: none;
+    color: #fff;
     outline: none;
 }
 
+.addNew input:focus, .nameEdit input:focus, .dateEdit input:focus, .timeEdit input:focus, .locationEdit input:focus {
+    background-color: rgba(255,255,255,0.3);
+}
+
 ul {
-    margin-bottom: 30px;
-    background-color: white;
+    margin-top: 130px;
     border-radius: 5px;
 }
 
 li {
     list-style: none;
+    box-sizing: border-box !important;
     font-size: 16px;
     padding-top: 2px;
     padding-bottom: 2px;
-    width: 250px;
+    padding-left: 10px;
+    padding-right: 20px;
+    color: #fff;
+    border: 5px solid rgba(255, 255, 255, 0);
+    border-radius: 8px;
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.1)
 }
 
 .deleteButton {
@@ -145,7 +178,7 @@ li {
     border: none;
     outline: none;
     float: right;
-    margin-right: -45px;
+    margin-right: -60px;
 }
 
 .nameEditButton, .dateEditButton, .timeEditButton, .locationEditButton {
@@ -156,10 +189,70 @@ li {
 }
 
 #updateNameButton, #updateDateButton, #updateTimeButton, #updateLocationButton, #deleteButton, .cancelEditButton {
-    border: none;
-    outline: none;
+    background: none !important;
+    outline: none !important;
+    border: 2px solid white !important;
+    margin: 5px;
+}
+ #updateNameButton:hover, #updateDateButton:hover, #updateTimeButton:hover, #updateLocationButton:hover, #deleteButton:hover, .cancelEditButton:hover {
+     background: rgba(255, 255, 255, 0.3) !important;
+ }
+
+ .apiDelete {
+     background-color: rgba(255, 50, 50, 0.4);
+     color: white;
+     border-radius: 8px;
+ }
+
+ .apiDelete h3 {
+     font-size: 48px;
+     text-align: center;
+ }
+
+.apiDelete p {
+    font-size: 20px;
+    text-align: center;
+}
+
+.delete-wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 22px;
+}
+
+#deleteButton:hover {
+    color: red;
 }
 
 .bold {
     font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+    
+    li {
+        font-size: 22px;
+    }
+
+    .addNew, .nameEdit, .dateEdit, .timeEdit, .locationEdit {
+        text-align: center;
+    }
+
+    #add, #updateNameButton, #updateDateButton, #updateTimeButton, #updateLocationButton, #deleteButton, .cancelEditButton {
+        height: 80px;
+        width: 80vw;
+        border: none !important;
+        border-radius: 0;
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .apiDelete {
+     margin-left: -6%;
+     width: 104vw;
+     border-radius: 0;
+ }
+
+}
+
