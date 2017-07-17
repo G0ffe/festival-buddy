@@ -19,12 +19,22 @@ nav hr {
     width: 50%;
 }
 
-h1 {
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+    
+}
+
+h1, h1 a, h1 a:hover {
     color: white;
     font-size: 9rem;
     text-align: center;
     margin-top: 200px;
     font-family: 'Shadows Into Light Two';
+    text-decoration: none;
 }
 
 .divide { 
@@ -124,7 +134,9 @@ h1.active {
 }
 
 #add {
-    width: 100px;
+    width: 200px;
+    height: 56px;
+    font-size: 24px;
     background: none;
     border: none;
     outline: none;
@@ -151,6 +163,19 @@ h1.active {
     background-color: rgba(255,255,255,0.3);
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #fff!important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #fff !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #fff !important;
+}
+
 ul {
     margin-top: 130px;
     border-radius: 5px;
@@ -162,8 +187,6 @@ li {
     font-size: 16px;
     padding-top: 2px;
     padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 20px;
     color: #fff;
     border: 5px solid rgba(255, 255, 255, 0);
     border-radius: 8px;
@@ -178,13 +201,17 @@ li:hover {
     border: none;
     outline: none;
     float: right;
-    margin-right: -60px;
+    margin-right: -50px;
 }
 
 .nameEditButton, .dateEditButton, .timeEditButton, .locationEditButton {
     background: none;
     border: none;
     outline: none;
+    float: right;
+}
+
+.fa {
     float: right;
 }
 
