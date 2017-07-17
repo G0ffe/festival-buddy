@@ -211,8 +211,7 @@ function renderEditDate(state) {
 };
 
 function renderEditTime(state) {
-    let time = state.date.toString().slice(11, 23)
-    $('#updateTime').val(time);
+    $('#updateTime').val(state.time);
 };
 
 function renderEditLocation(state) {
