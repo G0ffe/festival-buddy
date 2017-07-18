@@ -8,10 +8,10 @@ let globalId = '';
 
 function getApi(state) {
     $.ajax({
-        type: 'GET',
-        url: url,
-        dataType: 'json'
-    })
+            type: 'GET',
+            url: url,
+            dataType: 'json'
+        })
         .done(function (data) {
             state.festival = data;
             console.log('GET response:', JSON.stringify(data, "", 2));
@@ -24,10 +24,10 @@ function getApi(state) {
 
 function getApiById_Name(state) {
     $.ajax({
-        type: 'GET',
-        url: url + state,
-        dataType: 'json'
-    })
+            type: 'GET',
+            url: url + state,
+            dataType: 'json'
+        })
         .done(function (data) {
             state.festival = data;
             console.log('GET response:', JSON.stringify(data, "", 2));
@@ -41,10 +41,10 @@ function getApiById_Name(state) {
 function getApiById_Date(state) {
     console.log(state);
     $.ajax({
-        type: 'GET',
-        url: url + state,
-        dataType: 'json'
-    })
+            type: 'GET',
+            url: url + state,
+            dataType: 'json'
+        })
         .done(function (data) {
             state.festival = data;
             console.log('GET response:', JSON.stringify(data, "", 2));
@@ -57,10 +57,10 @@ function getApiById_Date(state) {
 
 function getApiById_Time(state) {
     $.ajax({
-        type: 'GET',
-        url: url + state,
-        dataType: 'json'
-    })
+            type: 'GET',
+            url: url + state,
+            dataType: 'json'
+        })
         .done(function (data) {
             state.festival = data;
             console.log('GET response:', JSON.stringify(data, "", 2));
@@ -73,10 +73,10 @@ function getApiById_Time(state) {
 
 function getApiById_Location(state) {
     $.ajax({
-        type: 'GET',
-        url: url + state,
-        dataType: 'json'
-    })
+            type: 'GET',
+            url: url + state,
+            dataType: 'json'
+        })
         .done(function (data) {
             state.festival = data;
             console.log('GET response:', JSON.stringify(data, "", 2));
@@ -88,14 +88,18 @@ function getApiById_Location(state) {
 }
 
 function sendToApi(state) {
-    console.log($("#time").val());
     $.ajax({
-        type: "POST",
-        url: url,
-        dataType: 'json',
-        contentType: 'application/json',
-        data: JSON.stringify({ "name": $('#name').val(), "date": $('#date').val(), "time": $('#time').val(), "location": $('#location').val() })
-    })
+            type: "POST",
+            url: url,
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                "name": $('#name').val(),
+                "date": $('#date').val(),
+                "time": $('#time').val(),
+                "location": $('#location').val()
+            })
+        })
         .done(function (data) {
             console.log('POST response:', JSON.stringify(data, "", 2));
         })
@@ -106,10 +110,12 @@ function sendToApi(state) {
 
 function updateApiName(name) {
     $.ajax({
-        type: "PUT",
-        url: url + globalId,
-        data: { name: name }
-    })
+            type: "PUT",
+            url: url + globalId,
+            data: {
+                name: name
+            }
+        })
         .done(function (data) {
             console.log('PUT response:', JSON.stringify(data, "", 2));
             getApi(state);
@@ -122,10 +128,12 @@ function updateApiName(name) {
 
 function updateApiDate(date) {
     $.ajax({
-        type: "PUT",
-        url: url + globalId,
-        data: { date: date }
-    })
+            type: "PUT",
+            url: url + globalId,
+            data: {
+                date: date
+            }
+        })
         .done(function (data) {
             console.log('PUT response:', JSON.stringify(data, "", 2));
             getApi(state);
@@ -139,10 +147,12 @@ function updateApiDate(date) {
 function updateApiTime(time) {
     console.log(time);
     $.ajax({
-        type: "PUT",
-        url: url + globalId,
-        data: { time: time }
-    })
+            type: "PUT",
+            url: url + globalId,
+            data: {
+                time: time
+            }
+        })
         .done(function (data) {
             console.log('PUT response:', JSON.stringify(data, "", 2));
             getApi(state);
@@ -155,10 +165,12 @@ function updateApiTime(time) {
 
 function updateApiLocation(location) {
     $.ajax({
-        type: "PUT",
-        url: url + globalId,
-        data: { location: location }
-    })
+            type: "PUT",
+            url: url + globalId,
+            data: {
+                location: location
+            }
+        })
         .done(function (data) {
             console.log('PUT response:', JSON.stringify(data, "", 2));
             getApi(state);
@@ -171,9 +183,9 @@ function updateApiLocation(location) {
 
 function deleteApi() {
     $.ajax({
-        type: "DELETE",
-        url: url + globalId,
-    })
+            type: "DELETE",
+            url: url + globalId,
+        })
         .done(function (data) {
             console.log('Festival Deleted');
             getApi(state);
@@ -186,8 +198,7 @@ function deleteApi() {
 function renderFestivalList(state) {
     if (state.festivals.length === 0) {
         $('.list-festivals').html('<h2>No Festivals listed at this time.</h2>');
-    }
-    else {
+    } else {
         $('#list-festivals').empty();
         for (let i = 0; i < state.festivals.length; i++) {
             let fullDate = (new Date(state.festivals[i].date));
@@ -269,11 +280,15 @@ $('.cancel-edit-button').click(function (e) {
 
 $('#add').click(function (e) {
     e.preventDefault();
-    sendToApi(state);
-    $('#name').val("");
-    $('#date').val("");
-    $('#time').val("");
-    $('#location').val("");
+    if ($('#name').val("") || $('#date').val("") || $('#time').val("") || $('#location').val("")) {
+        console.log("virker");
+    } else {
+        sendToApi(state);
+        $('#name').val("");
+        $('#date').val("");
+        $('#time').val("");
+        $('#location').val("");
+    }
 });
 
 $('#update-name-button').click(function (e) {

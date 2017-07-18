@@ -1,137 +1,137 @@
 body {
-  background-image: url("../img/cover.png");
-  background-size: cover;
-  background-position: center bottom;
-  height: 100vh;
-  margin-bottom: 0;
-  box-sizing: border-box;
+    background-image: url("../img/cover.png");
+    background-size: cover;
+    background-position: center bottom;
+    height: 100vh;
+    margin-bottom: 0;
+    box-sizing: border-box;
 }
 
 nav {
-  margin-bottom: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 nav hr {
-  width: 50%;
+    width: 50%;
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  float: none;
-  text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
 }
 
 h1,
 h1 a,
 h1 a:hover {
-  color: white;
-  font-size: 9rem;
-  text-align: center;
-  margin-top: 200px;
-  font-family: 'Shadows Into Light Two';
-  text-decoration: none;
+    color: white;
+    font-size: 9rem;
+    text-align: center;
+    margin-top: 200px;
+    font-family: 'Shadows Into Light Two';
+    text-decoration: none;
 }
 
 .divide {
-  border: 0;
-  height: 1px;
-  background-color: white;
+    border: 0;
+    height: 1px;
+    background-color: white;
 }
 
 .tag-line {
-  color: white;
-  font-family: 'Wire One';
-  text-align: center;
-  font-style: italic;
-  font-size: 30px;
-  letter-spacing: 3px;
+    color: white;
+    font-family: 'Wire One';
+    text-align: center;
+    font-style: italic;
+    font-size: 30px;
+    letter-spacing: 3px;
 }
 
 .button-wrapper {
-  margin-top: 30px;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+    margin-top: 30px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .front-button-1 {
-  height: 60px;
-  background: none;
-  color: white;
-  padding: 0 30px;
-  border: 3px solid white;
-  border-radius: 30px;
-  outline: none;
+    height: 60px;
+    background: none;
+    color: white;
+    padding: 0 30px;
+    border: 3px solid white;
+    border-radius: 30px;
+    outline: none;
 }
 
 .front-button-2 {
-  float: right;
-  height: 60px;
-  background: none;
-  color: white;
-  padding: 0 30px;
-  border: 3px solid white;
-  border-radius: 30px;
-  outline: none;
+    float: right;
+    height: 60px;
+    background: none;
+    color: white;
+    padding: 0 30px;
+    border: 3px solid white;
+    border-radius: 30px;
+    outline: none;
 }
 
 .front-button-1:hover,
 .front-button-2:hover {
-  background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .active {
-  color: #fff;
-  border-color: #fff;
+    color: #fff;
+    border-color: #fff;
 }
 
 .divide.active {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 h1.active {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .tag-line.active {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .button-wrapper.active {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .fa-pencil,
 .fa-window-close {
-  color: #fff;
-  cursor: pointer;
+    color: #fff;
+    cursor: pointer;
 }
 
 .fa-pencil:hover {
-  color: black;
+    color: black;
 }
 
 .fa-window-close:hover {
-  color: #db0000;
+    color: #db0000;
 }
 
 #add {
-  width: 200px;
-  height: 56px;
-  font-size: 24px;
-  background: none;
-  border: none;
-  outline: none;
-  border: 2px solid white;
+    width: 200px;
+    height: 56px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    outline: none;
+    border: 2px solid white;
 }
 
 #add:hover {
-  background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .add-new,
@@ -140,7 +140,7 @@ h1.active {
 .time-edit,
 .location-edit,
 .api-delete {
-  color: #fff;
+    color: #fff;
 }
 
 .add-new input,
@@ -148,10 +148,10 @@ h1.active {
 .date-edit input,
 .time-edit input,
 .location-edit input {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #fff;
-  outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    outline: none;
 }
 
 .add-new input:focus,
@@ -159,67 +159,70 @@ h1.active {
 .date-edit input:focus,
 .time-edit input:focus,
 .location-edit input:focus {
-  background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 ::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: #fff !important;
+    /* Chrome/Opera/Safari */
+    color: #fff !important;
 }
+
 ::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #fff !important;
+    /* Firefox 19+ */
+    color: #fff !important;
 }
+
 :-ms-input-placeholder {
-  /* IE 10+ */
-  color: #fff !important;
+    /* IE 10+ */
+    color: #fff !important;
 }
+
 :-moz-placeholder {
-  /* Firefox 18- */
-  color: #fff !important;
+    /* Firefox 18- */
+    color: #fff !important;
 }
 
 ul {
-  border-radius: 5px;
-  padding: 0;
+    border-radius: 5px;
+    padding: 0;
 }
 
 li {
-  list-style: none;
-  box-sizing: border-box !important;
-  font-size: 16px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  margin-bottom: 25px;
-  color: #fff;
-  border: 5px solid rgba(255, 255, 255, 0);
-  border-radius: 8px;
+    list-style: none;
+    box-sizing: border-box !important;
+    font-size: 16px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 25px;
+    color: #fff;
+    border: 5px solid rgba(255, 255, 255, 0);
+    border-radius: 8px;
 }
 
 li:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .delete-button {
-  background: none;
-  border: none;
-  outline: none;
-  float: right;
-  margin-right: -50px;
+    background: none;
+    border: none;
+    outline: none;
+    float: right;
+    margin-right: -50px;
 }
 
 .name-editButton,
 .date-editButton,
 .time-editButton,
 .location-editButton {
-  background: none;
-  border: none;
-  outline: none;
-  float: right;
+    background: none;
+    border: none;
+    outline: none;
+    float: right;
 }
 
 .fa {
-  float: right;
+    float: right;
 }
 
 #update-name-button,
@@ -228,18 +231,19 @@ li:hover {
 #update-location-button,
 #delete-button,
 .cancel-edit-button {
-  background: none !important;
-  outline: none !important;
-  border: 2px solid white !important;
-  margin: 5px;
+    background: none !important;
+    outline: none !important;
+    border: 2px solid white !important;
+    margin: 5px;
 }
+
 #update-name-button:hover,
 #update-date-button:hover,
 #update-time-button:hover,
 #update-location-button:hover,
 #delete-button:hover,
 .cancel-edit-button:hover {
-  background: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
 }
 
 /* .api-delete {
@@ -249,135 +253,122 @@ li:hover {
 } */
 
 .api-delete h3 {
-  font-size: 48px;
-  text-align: center;
+    font-size: 48px;
+    text-align: center;
 }
 
 .api-delete p {
-  font-size: 20px;
-  text-align: center;
+    font-size: 20px;
+    text-align: center;
 }
 
 .delete-wrapper {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-  li {
-    font-size: 22px;
-  }
-
-  .add-new,
-  .name-edit,
-  .date-edit,
-  .time-edit,
-  .location-edit {
-    text-align: center;
-  }
-
-  #add,
-  #update-name-button,
-  #update-date-button,
-  #update-time-button,
-  #update-location-button,
-  #delete-button,
-  .cancel-edit-button {
-    height: 80px;
-    width: 80vw;
-    border: none !important;
-    border-radius: 0;
-    background-color: rgba(255, 255, 255, 0.2) !important;
-  }
-
-  .api-delete {
-    width: 100%;
-    border-radius: 0;
-  }
-  .delete-button {
-    margin-right: -60px;
-  }
+    li {
+        font-size: 22px;
+    }
+    .add-new,
+    .name-edit,
+    .date-edit,
+    .time-edit,
+    .location-edit {
+        text-align: center;
+    }
+    #add,
+    #update-name-button,
+    #update-date-button,
+    #update-time-button,
+    #update-location-button,
+    #delete-button,
+    .cancel-edit-button {
+        height: 80px;
+        width: 80vw;
+        border: none !important;
+        border-radius: 0;
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .api-delete {
+        width: 100%;
+        border-radius: 0;
+    }
+    .delete-button {
+        margin-right: -60px;
+    }
 }
 
 @media only screen and (min-width: 370px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-  h1,
-  h1 a,
-  h1 a:hover {
-    font-size: 5rem;
-    margin-top: 100px;
-  }
-
-  nav hr {
-    width: 80%;
-  }
-
-  .tag-line {
-    font-size: 18px;
-    letter-spacing: 2px;
-  }
-
-  .button-wrapper {
-    margin-top: 30px;
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .front-button-1 {
-    height: 40px;
-    background: none;
-    color: white;
-    font-size: 16px;
-    padding: 0 20px;
-    border: 2px solid white;
-    border-radius: 20px;
-    outline: none;
-  }
-
-  .front-button-2 {
-    float: right;
-    height: 40px;
-    background: none;
-    color: white;
-    font-size: 16px;
-    padding: 0 20px;
-    border: 2px solid white;
-    border-radius: 20px;
-    outline: none;
-  }
-
-  .add-new {
-    margin-top: 50px;
-  }
-
-  #add,
-  #update-name-button,
-  #update-date-button,
-  #update-time-button,
-  #update-location-button,
-  #delete-button,
-  .cancel-edit-button {
-    height: 80px;
-    width: 100%;
-    border: none !important;
-    border-radius: 0;
-    background-color: rgba(255, 255, 255, 0.2) !important;
-  }
-
-  .api-delete {
-    margin: 0;
-  }
-
-  li {
-    font-size: 18px;
-  }
-
+    h1,
+    h1 a,
+    h1 a:hover {
+        font-size: 5rem;
+        margin-top: 100px;
+    }
+    nav hr {
+        width: 80%;
+    }
+    .tag-line {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+    .button-wrapper {
+        margin-top: 30px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .front-button-1 {
+        height: 40px;
+        background: none;
+        color: white;
+        font-size: 16px;
+        padding: 0 20px;
+        border: 2px solid white;
+        border-radius: 20px;
+        outline: none;
+    }
+    .front-button-2 {
+        float: right;
+        height: 40px;
+        background: none;
+        color: white;
+        font-size: 16px;
+        padding: 0 20px;
+        border: 2px solid white;
+        border-radius: 20px;
+        outline: none;
+    }
+    .add-new {
+        margin-top: 50px;
+    }
+    #add,
+    #update-name-button,
+    #update-date-button,
+    #update-time-button,
+    #update-location-button,
+    #delete-button,
+    .cancel-edit-button {
+        height: 80px;
+        width: 100%;
+        border: none !important;
+        border-radius: 0;
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    .api-delete {
+        margin: 0;
+    }
+    li {
+        font-size: 18px;
+    }
 }
