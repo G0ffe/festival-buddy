@@ -270,17 +270,7 @@ $(document).on("click", ".delete-button", function(e) {
     $(".api-delete").removeClass("hidden");
 });
 
-$(".cancel-edit-button").click(function(e) {
-    e.preventDefault();
-    $(".list-festivals").removeClass("hidden");
-    $(".name-edit").addClass("hidden");
-    $(".date-edit").addClass("hidden");
-    $(".time-edit").addClass("hidden");
-    $(".location-edit").addClass("hidden");
-    $(".api-delete").addClass("hidden");
-});
-
-$("#add").click(function(e) {
+$(document).on("click", "#add", function(e) {
     e.preventDefault();
     if (
         $("#name").val("") ||
@@ -305,6 +295,16 @@ $("#add").click(function(e) {
         $("#location").removeClass("required");
         $(".please-add").addClass("hidden");
     }
+});
+
+$(".cancel-edit-button").click(function(e) {
+    e.preventDefault();
+    $(".list-festivals").removeClass("hidden");
+    $(".name-edit").addClass("hidden");
+    $(".date-edit").addClass("hidden");
+    $(".time-edit").addClass("hidden");
+    $(".location-edit").addClass("hidden");
+    $(".api-delete").addClass("hidden");
 });
 
 $("#update-name-button").click(function(e) {
