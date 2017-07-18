@@ -281,7 +281,10 @@ $('.cancel-edit-button').click(function (e) {
 $('#add').click(function (e) {
     e.preventDefault();
     if ($('#name').val("") || $('#date').val("") || $('#time').val("") || $('#location').val("")) {
-        console.log("virker");
+        $('#name').addClass("required");
+        $('#date').addClass("required");
+        $('#time').addClass("required");
+        $('#location').addClass("required");
     } else {
         sendToApi(state);
         $('#name').val("");
