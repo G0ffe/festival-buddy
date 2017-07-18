@@ -242,11 +242,11 @@ li:hover {
   background: rgba(255, 255, 255, 0.3) !important;
 }
 
-.api-delete {
+/* .api-delete {
   background-color: rgba(255, 50, 50, 0.4);
   color: white;
   border-radius: 8px;
-}
+} */
 
 .api-delete h3 {
   font-size: 48px;
@@ -265,10 +265,6 @@ li:hover {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-#delete-button:hover {
-  color: red;
 }
 
 .bold {
@@ -303,8 +299,7 @@ li:hover {
   }
 
   .api-delete {
-    margin-left: -6%;
-    width: 104vw;
+    width: 100%;
     border-radius: 0;
   }
   .delete-button {
@@ -385,8 +380,4 @@ li:hover {
     font-size: 18px;
   }
 
-  .api-delete {
-    border-radius: 0;
-    background-color: rgba(0, 0, 0, 0)
-  }
 }
