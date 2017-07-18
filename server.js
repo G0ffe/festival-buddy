@@ -44,7 +44,7 @@ console.log(req.body);
     const requiredFields = ['name', 'date', 'time', 'location'];
     for (let i=0; i<requiredFields.length; i++) {
         const field = requiredFields[i];
-        if (!(field in req.body)) {
+        if (!(req.body.name || req.body.date || req.body.time || req.body.location)) {
             const message = `Missing '${field}' in request body`
             console.error(message);
             return res.status(400).send(message);
@@ -71,8 +71,7 @@ app.put('/festivals/:id', (req, res) => {
     const updateableFields = ['name', 'date', 'time', 'location'];
 
     updateableFields.forEach(field => {
-        if (req.body.name || req.body.date || req.body.time || req.body.location) {
-            console.log ("tada");
+        if (field in req.body) {
             toUpdate[field] = req.body[field];
         }
     });
