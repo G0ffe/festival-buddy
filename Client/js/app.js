@@ -269,7 +269,6 @@ $('.cancel-edit-button').click(function (e) {
 
 $('#add').click(function (e) {
     e.preventDefault();
-    console.log($('#name').attr(required).val());
     console.log($('#name').attr(required));
     sendToApi(state);
     $('#name').val("");
