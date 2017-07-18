@@ -270,7 +270,7 @@ $(document).on("click", ".delete-button", function(e) {
     $(".api-delete").removeClass("hidden");
 });
 
-$(document).on("click", "#add", function(e) {
+$(document).on("click", ".add", function(e) {
     e.preventDefault();
     let name = $("#name").val();
     let date = $("#date").val();
