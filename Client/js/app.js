@@ -185,17 +185,17 @@ function deleteApi() {
 
 function renderFestivalList(state) {
     if (state.festivals.length === 0) {
-        $('.listFestivals').html('<h2>No Festivals listed at this time.</h2>');
+        $('.list-festivals').html('<h2>No Festivals listed at this time.</h2>');
     }
     else {
-        $('#listFestivals').empty();
+        $('#list-festivals').empty();
         for (let i = 0; i < state.festivals.length; i++) {
             let fullDate = (new Date(state.festivals[i].date));
             date = fullDate.toString().slice(0, 16);
             time = state.festivals[i].time;
-            const html = `<li class="col-lg-3 col-md-12 col-xs-12" value="${state.festivals[i].id}">${state.festivals[i].name}   <button type="button" class="nameEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button> <button class="deleteButton"><i class="fa fa-window-close delete" aria-hidden="true"></i></button><br>${date}    <button class="dateEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button><br>${time}    <button class="timeEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button><br>${state.festivals[i].location}    <button class="locationEditButton"><i class="fa fa-pencil" aria-hidden="true"></i></button><br>
+            const html = `<li class="col-lg-3 col-md-12 col-xs-12" value="${state.festivals[i].id}">${state.festivals[i].name}   <button type="button" class="name-editButton"><i class="fa fa-pencil" aria-hidden="true"></i></button> <button class="delete-button"><i class="fa fa-window-close delete" aria-hidden="true"></i></button><br>${date}    <button class="date-editButton"><i class="fa fa-pencil" aria-hidden="true"></i></button><br>${time}    <button class="time-editButton"><i class="fa fa-pencil" aria-hidden="true"></i></button><br>${state.festivals[i].location}    <button class="location-editButton"><i class="fa fa-pencil" aria-hidden="true"></i></button><br>
             </li>`;
-            $('#listFestivals').append(html);
+            $('#list-festivals').append(html);
         }
     }
 
@@ -218,53 +218,53 @@ function renderEditLocation(state) {
     $('#updateLocation').val(state.location);
 };
 
-$(document).on('click', '.nameEditButton', function (e) {
+$(document).on('click', '.name-editButton', function (e) {
     e.preventDefault();
     globalId = $(this).parents().attr("value");
     getApiById_Name(globalId);
-    $('.listFestivals').addClass('hidden');
-    $('.nameEdit').removeClass('hidden');
+    $('.list-festivals').addClass('hidden');
+    $('.name-edit').removeClass('hidden');
 });
 
-$(document).on('click', '.dateEditButton', function (e) {
+$(document).on('click', '.date-editButton', function (e) {
     e.preventDefault();
     globalId = $(this).parents().attr("value");
     getApiById_Date(globalId);
-    $('.listFestivals').addClass('hidden');
-    $('.dateEdit').removeClass('hidden');
+    $('.list-festivals').addClass('hidden');
+    $('.date-edit').removeClass('hidden');
 });
 
-$(document).on('click', '.timeEditButton', function (e) {
+$(document).on('click', '.time-editButton', function (e) {
     e.preventDefault();
     globalId = $(this).parents().attr("value");
     getApiById_Time(globalId);
-    $('.listFestivals').addClass('hidden');
-    $('.timeEdit').removeClass('hidden');
+    $('.list-festivals').addClass('hidden');
+    $('.time-edit').removeClass('hidden');
 });
 
-$(document).on('click', '.locationEditButton', function (e) {
+$(document).on('click', '.location-editButton', function (e) {
     e.preventDefault();
     globalId = $(this).parents().attr("value");
     getApiById_Location(globalId);
-    $('.listFestivals').addClass('hidden');
-    $('.locationEdit').removeClass('hidden');
+    $('.list-festivals').addClass('hidden');
+    $('.location-edit').removeClass('hidden');
 });
 
-$(document).on('click', '.deleteButton', function (e) {
+$(document).on('click', '.delete-button', function (e) {
     e.preventDefault();
     globalId = $(this).parents().attr("value");
-    $('.listFestivals').addClass('hidden');
-    $('.apiDelete').removeClass('hidden');
+    $('.list-festivals').addClass('hidden');
+    $('.api-delete').removeClass('hidden');
 });
 
-$('.cancelEditButton').click(function (e) {
+$('.cancel-edit-button').click(function (e) {
     e.preventDefault();
-    $('.listFestivals').removeClass('hidden');
-    $('.nameEdit').addClass('hidden');
-    $('.dateEdit').addClass('hidden');
-    $('.timeEdit').addClass('hidden');
-    $('.locationEdit').addClass('hidden');
-    $('.apiDelete').addClass('hidden');
+    $('.list-festivals').removeClass('hidden');
+    $('.name-edit').addClass('hidden');
+    $('.date-edit').addClass('hidden');
+    $('.time-edit').addClass('hidden');
+    $('.location-edit').addClass('hidden');
+    $('.api-delete').addClass('hidden');
 });
 
 $('#add').click(function (e) {
@@ -276,57 +276,57 @@ $('#add').click(function (e) {
     $('#location').val("");
 });
 
-$('#updateNameButton').click(function (e) {
+$('#update-name-button').click(function (e) {
     e.preventDefault();
     const name = $('#updateName').val();
     updateApiName(name);
-    $('.listFestivals').removeClass('hidden');
-    $('.nameEdit').addClass('hidden');
+    $('.list-festivals').removeClass('hidden');
+    $('.name-edit').addClass('hidden');
 
 });
 
-$('#updateDateButton').click(function (e) {
+$('#update-date-button').click(function (e) {
     e.preventDefault();
     const date = $('#updateDate').val();
     updateApiDate(date);
-    $('.listFestivals').removeClass('hidden');
-    $('.dateEdit').addClass('hidden');
+    $('.list-festivals').removeClass('hidden');
+    $('.date-edit').addClass('hidden');
 });
 
-$('#updateTimeButton').click(function (e) {
+$('#update-time-button').click(function (e) {
     e.preventDefault();
     const time = $('#updateTime').val();
     updateApiTime(time);
-    $('.listFestivals').removeClass('hidden');
-    $('.timeEdit').addClass('hidden');
+    $('.list-festivals').removeClass('hidden');
+    $('.time-edit').addClass('hidden');
 });
 
-$('#updateLocationButton').click(function (e) {
+$('#update-location-button').click(function (e) {
     e.preventDefault();
     const location = $('#updateLocation').val();
     updateApiLocation(location);
-    $('.listFestivals').removeClass('hidden');
-    $('.locationEdit').addClass('hidden');
+    $('.list-festivals').removeClass('hidden');
+    $('.location-edit').addClass('hidden');
 });
 
-$('#deleteButton').click(function (e) {
+$('#delete-button').click(function (e) {
     e.preventDefault();
     deleteApi();
-    $('.listFestivals').removeClass('hidden');
-    $('.apiDelete').addClass('hidden')
+    $('.list-festivals').removeClass('hidden');
+    $('.api-delete').addClass('hidden')
 })
 
 $('#apicheck').click(function (e) {
     e.preventDefault();
     getApi(state);
     $('#apicheck').addClass('active');
-    $('.addNew').addClass('hidden');
-    $('.apiDelete').addClass('hidden');
-    $('.listFestivals').removeClass('hidden');
-    $('.nameEdit').addClass('hidden');
-    $('.dateEdit').addClass('hidden');
-    $('.timeEdit').addClass('hidden');
-    $('.locationEdit').addClass('hidden');
+    $('.add-new').addClass('hidden');
+    $('.api-delete').addClass('hidden');
+    $('.list-festivals').removeClass('hidden');
+    $('.name-edit').addClass('hidden');
+    $('.date-edit').addClass('hidden');
+    $('.time-edit').addClass('hidden');
+    $('.location-edit').addClass('hidden');
     $('h1').addClass('active');
     $('.tag-line').addClass('active');
     $('.front-button-1').addClass('active');
@@ -335,15 +335,15 @@ $('#apicheck').click(function (e) {
     $('.button-wrapper').addClass('active');
 });
 
-$('#addNewFestival').click(function () {
-    $('#addNewFestival').addClass('active');
-    $('.listFestivals').addClass('hidden');
-    $('.apiDelete').addClass('hidden');
-    $('.addNew').removeClass('hidden');
-    $('.nameEdit').addClass('hidden');
-    $('.dateEdit').addClass('hidden');
-    $('.timeEdit').addClass('hidden');
-    $('.locationEdit').addClass('hidden');
+$('#add-newFestival').click(function () {
+    $('#add-newFestival').addClass('active');
+    $('.list-festivals').addClass('hidden');
+    $('.api-delete').addClass('hidden');
+    $('.add-new').removeClass('hidden');
+    $('.name-edit').addClass('hidden');
+    $('.date-edit').addClass('hidden');
+    $('.time-edit').addClass('hidden');
+    $('.location-edit').addClass('hidden');
     $('h1').addClass('active');
     $('.tag-line').addClass('active');
     $('.front-button-1').addClass('active');
