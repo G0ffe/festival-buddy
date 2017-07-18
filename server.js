@@ -66,18 +66,13 @@ console.log(req.body);
 });
 
 app.put('/festivals/:id', (req, res) => {
-    //if(!(req.params.id && req.body.id && req.params.id === req.body.id)) {
-    //   const message = (`Request path id (${req.params.id}) and request body id ` +
-    //    `(${req.body.id}) must match`);
-    //    console.error(message);
-    //    res.sendStatus(400).json({message: message});
-    //}
 
     const toUpdate = {};
     const updateableFields = ['name', 'date', 'time', 'location'];
 
     updateableFields.forEach(field => {
-        if (field in req.body) {
+        if (req.body.name || req.body.date || req.body.time || req.body.location) {
+            console.log ("tada");
             toUpdate[field] = req.body[field];
         }
     });
