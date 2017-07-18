@@ -183,7 +183,12 @@ h1.active {
 }
 
 .required {
-  border: 2px solid red;;
+  border: 2px solid red !important;
+}
+
+.please-add {
+  font-size: 1rem;
+  color: red;
 }
 
 ul {
