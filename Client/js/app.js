@@ -272,11 +272,16 @@ $(document).on("click", ".delete-button", function(e) {
 
 $(document).on("click", "#add", function(e) {
     e.preventDefault();
+    let name = $("#name").val();
+    let date = $("#date").val();
+    let time = $("#time").val();
+    let location = $("#location").val();
+
     if (
-        $("#name").val("") ||
-        $("#date").val("") ||
-        $("#time").val("") ||
-        $("#location").val("")
+        name.length < 1 ||
+        date.length < 1 ||
+        time.length < 1 ||
+        location.length < 1
     ) {
         $("#name").addClass("required");
         $("#date").addClass("required");
