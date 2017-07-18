@@ -11,8 +11,7 @@ nav {
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
-  height: 155px;
-  width: 100vw;
+  width: 100%;
 }
 
 nav hr {
@@ -184,6 +183,7 @@ h1.active {
 ul {
   margin-top: 130px;
   border-radius: 5px;
+  padding: 0;
 }
 
 li {
@@ -192,6 +192,7 @@ li {
   font-size: 16px;
   padding-top: 2px;
   padding-bottom: 2px;
+  margin-bottom: 25px;
   color: #fff;
   border: 5px solid rgba(255, 255, 255, 0);
   border-radius: 8px;
