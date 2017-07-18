@@ -182,6 +182,10 @@ h1.active {
     color: #fff !important;
 }
 
+.required {
+  border: 2px solid red;;
+}
+
 ul {
     border-radius: 5px;
     padding: 0;

@@ -285,6 +285,7 @@ $('#add').click(function (e) {
         $('#date').addClass("required");
         $('#time').addClass("required");
         $('#location').addClass("required");
+        
     } else {
         sendToApi(state);
         $('#name').val("");
