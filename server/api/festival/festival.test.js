@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const should = chai.should();
 const expect = chai.expect;
 
-const { Festival } = require('./festival.model');
+const Festival = require('./festival.model');
 const { app, runServer, closeServer } = require('../../../server');
 const { TEST_DATABASE_URL } = require('../../config');
 
